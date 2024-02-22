@@ -6,6 +6,8 @@ const port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+// Parse JSON request bodies
+app.use(express.json());
 
 // Define error handling middleware
 app.use((err, req, res, next) => {
