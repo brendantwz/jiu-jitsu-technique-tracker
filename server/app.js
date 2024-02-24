@@ -28,11 +28,11 @@ app.use((err, req, res, next) => {
 
 // Import route files
 import techniquesRoutes from './routes/techniquesRoutes.js';
-
-// Other route files
+import authRoutes from './routes/authRoutes.js';
 
 // Use route files
 app.use('/api/techniques', techniquesRoutes);
+app.use('/api/auth', authRoutes);
 
 
 app.listen(port, () => {
