@@ -46,8 +46,11 @@ router.post('/register', validateRegistration, async (req, res) => {
           return res.status(400).json({ error: 'User already exists' });
         }
     
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         // Create new user
-        const newUser = new User({ username, password });
+        const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
     
         res.status(201).json({ message: 'User registered successfully' });
@@ -62,16 +65,20 @@ router.post('/login', validateLogin, async (req, res) => {
     const { username, password } = req.body;
 
     try {
+        console.log('Attempting login for username:', username);
         // Find the user by username
         const user = await User.findOne({ username });
+        console.log('Retrieved user:', user);
 
         // Verify password
         if (!user || !(await bcrypt.compare(password, user.password))) {
+            console.log('Password:', password, 'User Password:', user.password);
             return res.status(401).json({ error: 'Invalid username or password' });
         }
 
         // Generate JWT token
         const token = jwt.sign({ userId: user._id }, 'secret');
+        console.log('Login successful. Token:', token);
 
         res.status(200).json({ token });
     } catch (error) {
