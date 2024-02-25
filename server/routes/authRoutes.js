@@ -33,6 +33,8 @@ const validateLogin = [
     }
 ]
 
+// TODO: Consider testing and including a middleware for JWT Authorization Token (Access Protected Route with(out) JWT Token)
+
 // Register Route Handler
 router.post('/register', validateRegistration, async (req, res) => {
     try {
