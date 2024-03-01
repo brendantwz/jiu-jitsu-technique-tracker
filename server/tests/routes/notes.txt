@@ -14,11 +14,22 @@ In this test file:
 8. We send HTTP requests to our mocked Express app using request(app), and we use expect assertions to validate the responses.
 
 To be documented learnings:
-1. Jest is a testing framework to test backend routes and functions
-2. Jest only support CommonJS, ES6 module is still under development
-3. If project is driven by ES6 module, required to use Babel to support ES6 module
-4. When using chatgpt driven code, make sure to check the directory path of where it import/required file
-5. Mirror image the directory structure for testing. Ease of visibility
+1. Jest is a testing framework to test backend routes and functions that focuses on unit and integration testing. Primarily used for automated testing in development env
+    > Helps with CI/CD pipelines ensuring changes does not break existing functionality
+    > Helps with Codebase integration that ensure code changes meet expected outcomes
+
+2. Postman is API platform for building and using API. Also use for API testing, dev, documentation, and monitoring. Primarily used on API request and responses
+    > Designed for API testing that test to check responses code, response time, body content centered around HTTP requests and responses
+    > Ideal for end-to-end API testing in environments that mimic the real world usages
+    > Helps with cross-team collaboration with tools that helps ease of communication
+
+**Combining Jest for automated unit and integration testing with Postman for API testing and documentation provides a comprehensive testing strategy, 
+ensuring robust, reliable, and well-documented software.**
+
+3. Jest only support CommonJS, ES6 module is still under development
+4. If project is driven by ES6 module, required to use Babel to support ES6 module
+5. When using chatgpt driven code, make sure to check the directory path of where it import/required file
+6. Mirror image the directory structure for testing. Ease of visibility
 
 
 Personal note on TODO:
