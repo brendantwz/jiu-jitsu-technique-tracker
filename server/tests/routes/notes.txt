@@ -1,0 +1,67 @@
+Test UNITS are 100% written by CHATGPT. I have no credit to this work.
+Decided to include this part of learning and for maintainability and quality of code
+
+techniquesRoutes.test.js test purposes:
+In this test file:
+
+1. We import necessary modules such as request, express, and mongoose.
+2. We import the Technique model and the router from the techniquesRoutes.js file.
+3. We set up a mock Express app and mount the router on the /api/techniques route.
+4. We mock the Technique model methods using jest.mock.
+5. We define mock data for techniques and mock the Technique.findById method to resolve with the corresponding technique when called.
+6. We use describe blocks to organize our test cases.
+7. Inside each describe block, we use it blocks to define individual test cases.
+8. We send HTTP requests to our mocked Express app using request(app), and we use expect assertions to validate the responses.
+
+To be documented learnings:
+1. Jest is a testing framework to test backend routes and functions
+2. Jest only support CommonJS, ES6 module is still under development
+3. If project is driven by ES6 module, required to use Babel to support ES6 module
+4. When using chatgpt driven code, make sure to check the directory path of where it import/required file
+5. Mirror image the directory structure for testing. Ease of visibility
+
+
+Personal note on TODO:
+1. Setting up Jest for testing
+    > Install Jest under project's root directory (in this case server/)
+    npm install --save-dev jest
+
+    > Update package.json script section
+      "scripts": {
+        "test": "jest"
+        },
+
+    > Create a test unit under mirror image directory structure
+    Testing for techniquesRoutes.js then Test name is "techniquesRoutes.test.js"
+
+2. Transpile ES6 Modules to CommonJS using Babel
+    > Install Babel and necessary presets
+    npm install --save-dev @babel/core @babel/preset-env babel-jest
+
+    > Create a Babel configuration file (e.g., .babelrc) in your project root:
+    {
+        "presets": ["@babel/preset-env"]
+    }
+
+    > Update Jest configuration in either 'jest.config.js' or package.json' (I did it on package.json)
+      "jest": {
+        "transform": {
+        "^.+\\.jsx?$": "babel-jest"
+            }
+        }
+
+OUTPUT of "npm test"
+ PASS  tests/routes/techniquesRoutes.test.js
+  Techniques Routes
+    GET /api/techniques
+      √ should return all techniques (28 ms)
+      √ should handle errors (37 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.681 s
+Ran all test suites.
+
+3. Write several test cases to verify the backend routes and functions #TODO
+
