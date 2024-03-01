@@ -1,4 +1,8 @@
 import logo from './logo.svg';
+import footer from './components/Footer.js';
+import header from './components/Header.js';
+import sidebar from './components/Sidebar.js';
+import navbar from './components/Navigation.js';
 import './App.css';
 
 function App() {
