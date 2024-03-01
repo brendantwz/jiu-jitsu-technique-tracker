@@ -64,4 +64,5 @@ Time:        1.681 s
 Ran all test suites.
 
 3. Write several test cases to verify the backend routes and functions #TODO
+4. Document my learnings to understand how to write a unit test for backend route and function test using Jest
 
