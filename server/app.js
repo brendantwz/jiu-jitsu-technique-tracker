@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 // Parse JSON request bodies
 app.use(express.json());
+// Enable CORS for all routes (Note to configure if deploying to production)
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/techniquesdb', {
