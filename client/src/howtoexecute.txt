@@ -1,0 +1,14 @@
+How to execute your fullstack react application
+1. Go to server side and execute the backend node/express application using "nodemon"
+2. Open a new terminal and go to client directory
+3. Execute it by typing "npm start"
+4. It will ask you if you would like to change to a another port. Press "y"
+5. It will load "localhost:3001" on your browser
+6. You will see the content displayed
+
+To verify if backend and successfully integrated into the frontend.
+Open developer tool > Network > refresh page > find "techniques"
+
+It should request fetch the data from databases and return status 200 via display on the localhost:3001
+
+**Note that backend enabled CORS (cross-origin resource sharing)**
