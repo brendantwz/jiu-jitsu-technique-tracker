@@ -1,19 +1,22 @@
-import logo from './logo.svg';
-import footer from './components/Footer.js';
-import header from './components/Header.js';
-import sidebar from './components/Sidebar.js';
-import navbar from './components/Navigation.js';
-import TechniquesList from './components/TechniquesList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+// import TechniquesList from './components/TechniquesList';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Jiu-jitsu Techniques</h1>
-      </header>
-      <TechniquesList />
-    </div>
+    // <div className="App">
+    //   <header className="App-header">
+    //     <h1>Jiu-jitsu Techniques</h1>
+    //   </header>
+    //   <TechniquesList />
+    // </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        {/* Other routes */}
+      </Routes>
+    </Router>
   );
 }
 
