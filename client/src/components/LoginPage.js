@@ -39,6 +39,8 @@ const LoginPage = () => {
         }
     };
 
+    //TODO - Add forgot password functionality (probably need a reset password page)
+    //TODO - If user key in wrong email address or password. Send a warning/alert saying "Email and/or Password incorrect. Please try again" if user register, else, prompt "This email is not registered"
     return (
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -103,21 +105,21 @@ const LoginPage = () => {
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Sign in
+                  Login
                 </button>
               </div>
             </form>
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{' '}
-              <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                Start a 14 day free trial
+              <a href="/register" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                Register here
               </a>
             </p>
           </div>
         </div>
       </>
-    )
+    ) 
   }
   
 export default LoginPage;
