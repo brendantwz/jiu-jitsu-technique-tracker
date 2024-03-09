@@ -3,19 +3,17 @@ import './App.css';
 // import TechniquesList from './components/TechniquesList';
 import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <h1>Jiu-jitsu Techniques</h1>
-    //   </header>
-    //   <TechniquesList />
-    // </div>
+    //TODO - Include DashboardPage after successful registration or login
+    //TODO - Include TechniqueList on DashboardPage specifically tied to User upon login 
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/register" element={<RegisterPage />} />
       </Routes>
     </Router>
   );
