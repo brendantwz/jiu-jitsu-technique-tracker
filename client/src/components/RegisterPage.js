@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = async (event) => {
-      event.preventDefault();
-      try {
-          const response = await axios.post('http://localhost:3000/api/auth/register', {
-              username,
-              password,
-          });
-          console.log(response.data);
-          alert('Registration successful');
-          //TODO - Redirect to dashboard page upon successful registration
-      } catch (error) {
-          console.error('Registration error:', error.response ? error.response.data : error.message);
-          alert('Registration failed');
-          //TODO - Have warning to include x-amount of char and upper/lowercase gatekeeper for security
-      }
+        event.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3000/api/auth/register', {
+                username,
+                password,
+            });
+            console.log(response.data);
+            alert('Registration successful');
+            //TODO - Redirect to dashboard page upon successful registration
+            navigate('/dashboard');
+        } catch (error) {
+            console.error('Registration error:', error.response ? error.response.data : error.message);
+            alert('Registration failed');
+            //TODO - Have warning to include x-amount of char and upper/lowercase gatekeeper for security
+        }
     };
 
-    //TODO - Improve UI for RegisterPage with responsive Page
-    //TODO - Allow user to go Back to Login Page
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
@@ -19,7 +21,8 @@ const LoginPage = () => {
 
             console.log(response.data); // Handle response according to your needs
 
-            // Redirect user or update UI based on successful login
+            navigate('/dashboard');
+
         } catch (error) {
             // Handle HTTP errors
             if (error.response) {
