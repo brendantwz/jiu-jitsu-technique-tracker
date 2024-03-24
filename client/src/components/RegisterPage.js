@@ -16,7 +16,6 @@ const LoginPage = () => {
             });
             console.log(response.data);
             alert('Registration successful');
-            //TODO - Redirect to dashboard page upon successful registration
             navigate('/dashboard');
         } catch (error) {
             console.error('Registration error:', error.response ? error.response.data : error.message);
